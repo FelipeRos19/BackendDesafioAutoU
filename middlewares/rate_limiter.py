@@ -10,7 +10,7 @@ class RateLimiter:
 
     async def __call__(self, request: Request, call_next):
         if request.method == "OPTIONS":
-            return await call_next(request)
+            return Response(status_code=200)
 
         ip = request.client.host
         now = time.time()
