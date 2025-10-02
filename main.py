@@ -17,7 +17,7 @@ app.add_middleware(
     allow_origins=origins,
 )
 
-rate_limiter = RateLimiter(int(os.getenv("RATE_LIMIT")), int(os.getenv("TIME_WINDOW")))
+#rate_limiter = RateLimiter(int(os.getenv("RATE_LIMIT")), int(os.getenv("TIME_WINDOW")))
 
-app.middleware("http")(rate_limiter)
+#app.middleware("http")(rate_limiter)
 app.include_router(api_router)
