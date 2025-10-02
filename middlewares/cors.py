@@ -5,7 +5,7 @@ from starlette.middleware.cors import CORSMiddleware
 
 def setup_cors(app: FastAPI):
     origins = [
-        os.getenv("CORS_ORIGIN")
+        os.getenv("https://emails.felipe.fun/")
     ]
 
     app.add_middleware(
