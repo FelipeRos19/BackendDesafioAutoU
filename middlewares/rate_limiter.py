@@ -9,6 +9,9 @@ class RateLimiter:
         self.requests_per_ip = defaultdict(list)
 
     async def __call__(self, request: Request, call_next):
+        if request.method == "OPTIONS":
+            return await call_next(request)
+
         ip = request.client.host
         now = time.time()
 
