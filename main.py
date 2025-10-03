@@ -14,7 +14,7 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://frontenddesafioautou-production.up.railway.app/"],
+    allow_origins=["https://frontenddesafioautou-production.up.railway.app"],
     allow_methods=["*"],
     allow_headers=["*"],
     allow_credentials=False
