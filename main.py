@@ -15,19 +15,11 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://frontenddesafioautou-production.up.railway.app"],
+    allow_origins=origins,
     allow_methods=["*"],
     allow_headers=["*"],
     allow_credentials=False
 )
-
-@app.middleware("http")
-async def https_redirect(request: Request, call_next):
-    if request.headers.get("x-forwarded-proto") == "http":
-        url = request.url.replace(scheme="https")
-        return RedirectResponse(url)
-    response = await call_next(request)
-    return response
 
 #rate_limiter = RateLimiter(int(os.getenv("RATE_LIMIT")), int(os.getenv("TIME_WINDOW")))
 
