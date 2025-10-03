@@ -3,7 +3,7 @@ import nltk
 import spacy
 from nltk.corpus import stopwords
 
-nltk.downloader.download('stopwords')
+#nltk.downloader.download('stopwords')
 
 stop_words = set(stopwords.words('portuguese'))
 
